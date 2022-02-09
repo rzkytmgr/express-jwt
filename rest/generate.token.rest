@@ -1,0 +1,8 @@
+POST http://localhost:4001/token/generate HTTP/1.1
+content-type: application/json
+
+{
+  "id": 0,
+  "name": "Walo Imardo",
+  "role": 5
+}
