@@ -1,0 +1,3 @@
+GET http://localhost:4001/auth/info HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwibmFtZSI6IldhbG8gSW1hcmRvIiwicm9sZSI6NSwiaWF0IjoxNjQ0NDQ5MzkxLCJleHAiOjE2NDQ0NDk0NTF9.pFsZdVejD51SCrbb3ZBGOy0TaGN3EW06KSfjou4yPpA
