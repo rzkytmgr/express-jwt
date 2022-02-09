@@ -1,10 +1,9 @@
-const jwt = require("jsonwebtoken");
 const express = require("express");
 const { generateToken } = require("../../utils");
 const router = express.Router();
 
 router.use((req, res, next) => {
-  console.log("[💣] You will see me, if you want to `generate` token!");
+  console.log("[Middleware] You will see me, if you want to `generate` token!");
   next();
 });
 
@@ -21,7 +20,7 @@ router.post("/generate", (req, res, next) => {
     role: req.body.role,
   });
 
-  res.status(200).json({
+  return res.status(200).json({
     code: 200,
     message: "Here your crown KING!",
     token,

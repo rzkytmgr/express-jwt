@@ -8,7 +8,7 @@ const { parseToken } = require("../../utils");
 router.use(authenticateToken);
 
 router.get("/info", (req, res, next) => {
-  res.status(200).json({
+  return res.status(200).json({
     code: 200,
     message: "Only amazing people can open this page!",
     route: req.path,
@@ -17,7 +17,7 @@ router.get("/info", (req, res, next) => {
 });
 
 router.get("/secret", (req, res, next) => {
-  res.status(200).json({
+  return res.status(200).json({
     code: 200,
     message: "Only amazing people can open this page!",
     route: req.path,
@@ -25,7 +25,7 @@ router.get("/secret", (req, res, next) => {
 });
 
 router.get("/secret/:id", (req, res, next) => {
-  res.status(200).json({
+  return res.status(200).json({
     code: 200,
     message: "Only amazing people can open this page!",
     route: req.path,

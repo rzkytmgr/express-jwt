@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const { parseToken } = require("../utils");
 
 const authenticateToken = (req, res, next) => {
-  const token = parseToken(req.headers["authorization"]);
+  const token = parseToken(req.headers.authorization);
 
   if (!token)
     return res.status(401).json({
@@ -10,14 +10,14 @@ const authenticateToken = (req, res, next) => {
       message: "Unauthorized",
     });
 
-  jwt.verify(token, process.env.SECRET_KEY, (err, user) => {
-    console.log(err);
-    if (err)
-      return res.status(403).json({
-        code: 403,
-        message: "Forbidden",
-      });
-  });
+  try {
+    jwt.verify(token, process.env.SECRET_KEY);
+  } catch (Exception) {
+    return res.status(403).json({
+      code: 403,
+      message: "Forbidden",
+    });
+  }
 
   next();
 };
